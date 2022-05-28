@@ -1,0 +1,22 @@
+<restlet scriptid="customscript_savedsearch_rl">
+  <description></description>
+  <isinactive>F</isinactive>
+  <name>SavedSearch Restlet</name>
+  <notifyadmins>F</notifyadmins>
+  <notifyemails></notifyemails>
+  <notifyowner>T</notifyowner>
+  <notifyuser>F</notifyuser>
+  <scriptfile>[/SuiteScripts/SuiteQL/restlet/savedsearch_rl.js]</scriptfile>
+  <scriptdeployments>
+    <scriptdeployment scriptid="customdeploy_savedsearch_rl_dep">
+      <allemployees>T</allemployees>
+      <allpartners>T</allpartners>
+      <allroles>T</allroles>
+      <audslctrole></audslctrole>
+      <isdeployed>T</isdeployed>
+      <loglevel>DEBUG</loglevel>
+      <status>RELEASED</status>
+      <title>SavedSearch Restlet</title>
+    </scriptdeployment>
+  </scriptdeployments>
+</restlet>
