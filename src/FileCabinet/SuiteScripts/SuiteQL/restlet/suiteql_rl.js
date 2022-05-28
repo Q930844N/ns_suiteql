@@ -26,7 +26,7 @@ define(['N/log', 'N/query', 'N/runtime'], function (log, query, runtime) {
     log.debug({ title: 'request', details: request });
 
     const scriptObj = runtime.getCurrentScript();
-    log.debug('Total governnce unit: ' + scriptObj.getRemainingUsage());
+    log.debug({ title: 'Total governnce unit', details: scriptObj.getRemainingUsage() });
     const totalGU = scriptObj.getRemainingUsage();
 
     try {
@@ -55,7 +55,7 @@ define(['N/log', 'N/query', 'N/runtime'], function (log, query, runtime) {
       log.debug({ 'title': 'error', 'details': e });
       return { 'error': { 'type': e.type, 'name': e.name, 'message': e.message } }
     }
-    log.debug('Remaining governance units: ' + scriptObj.getRemainingUsage());
+    log.debug({ title: 'Remaining governance units: ', details: scriptObj.getRemainingUsage() });
     const remainingGU = scriptObj.getRemainingUsage();
 
     log.audit({ title: 'Execution End Time', details: new Date() });
