@@ -5,7 +5,6 @@
  * @NModuleScope Public
  */
 
-var define;
 
 define(['N/log', 'N/query', 'N/runtime'], function (log, query, runtime) {
 
@@ -44,6 +43,7 @@ define(['N/log', 'N/query', 'N/runtime'], function (log, query, runtime) {
         for (let i = 0; i < qryPagedResults.pageRanges.length; i++) {
           const currentPage = qryPagedResults.fetch(i);
           const results = currentPage.data.results;
+          log.debug({ title: 'results', details: results });
           results.forEach(function (result) {
             response.data.push(result)
           });
@@ -52,7 +52,7 @@ define(['N/log', 'N/query', 'N/runtime'], function (log, query, runtime) {
 
 
     } catch (e) {
-      log.debug({ 'title': 'error', 'details': e });
+      log.debug({ title: 'error in catch', details: e });
       return { 'error': { 'type': e.type, 'name': e.name, 'message': e.message } }
     }
     log.debug({ title: 'Remaining governance units: ', details: scriptObj.getRemainingUsage() });

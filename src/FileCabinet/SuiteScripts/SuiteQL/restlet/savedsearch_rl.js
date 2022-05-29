@@ -1,11 +1,10 @@
 /**
-* @author Abdul Qadeer
+ * @author Abdul Qadeer Mangrio
  * @NApiVersion 2.1
  * @NScriptType Restlet
  * @NModuleScope Public
  */
 
-var define;
 
 define(['N/log', 'N/search', 'N/runtime'], function (log, search, runtime) {
 
@@ -32,8 +31,8 @@ define(['N/log', 'N/search', 'N/runtime'], function (log, search, runtime) {
 
       const searchObj = search.create({
         type: request.search_type,
-        filters: request.filters,
-        columns: request.columns
+        filters: request.filters || [],
+        columns: request.columns || []
       });
 
       if (type === 'single') {
